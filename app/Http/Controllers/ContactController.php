@@ -29,7 +29,11 @@ class ContactController extends Controller
      */
     public function store(StoreContactRequest $request)
     {
-        //
+         // Valider et créer un nouveau contact avec les données validées
+         Contact::create($request->validated());
+
+         // Rediriger vers la page d'accueil avec un message de succès
+         return redirect('/')->with('success', 'Contact créé avec succès !');
     }
 
     /**

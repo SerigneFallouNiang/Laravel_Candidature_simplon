@@ -11,7 +11,7 @@ class StoreContactRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,10 @@ class StoreContactRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            'nom' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255',
+            'sujet' => 'required|string|max:255',
+            'message' => 'required|string|min:10',
         ];
     }
 }

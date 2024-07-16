@@ -12,14 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('notifications', function (Blueprint $table) {
-            Schema::create('notifications', function (Blueprint $table) {
-                $table->id();
-                $table->text('contenu');
-                $table->date('dateEnvoi');
-                $table->string('type');
-                $table->foreignId('candidature_id')->constrained();
-                $table->timestamps();
-            });
+            $table->id();
+            $table->text('contenu');
+            $table->date('dateEnvoi');
+            $table->string('type');
+            $table->foreignId('candidature_id')->constrained();
+            $table->timestamps();
         });
     }
 
