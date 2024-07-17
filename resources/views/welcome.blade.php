@@ -759,10 +759,11 @@
                 </div>
             @endif
             <form action="{{route('contacts.store')}}" method="post" class="php-email-form" data-aos="" data-aos-delay="500">
-              <div class="row gy-4">
+              @csrf
+                <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <input type="text" name="name" class="form-control" placeholder="Prénom et Nom" required="">
+                  <input type="text" name="nom" class="form-control" placeholder="Prénom et Nom" required="">
                 </div>
 
                 <div class="col-md-6 ">
@@ -770,7 +771,7 @@
                 </div>
 
                 <div class="col-md-12">
-                  <input type="text" class="form-control" name="subject" placeholder="Sujet" required="">
+                  <input type="text" class="form-control" name="sujet" placeholder="Sujet" required="">
                 </div>
 
                 <div class="col-md-12">
